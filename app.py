@@ -88,7 +88,7 @@ def main():
         model = load_model()
         probability_cat, probability_dog = predict_image(image, model)
         
-        st.image(image.resize((40, 40)),caption='Successfully Uploaded Image', use_container_width=True )
+        st.image(image.resize((250, 250)),caption='Successfully Uploaded Image', use_container_width=True )
         
         if probability_dog > probability_cat:
             st.markdown(f"<h2 style='color: red;'> Image Classification : DOG</h2>", unsafe_allow_html=True)
