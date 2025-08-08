@@ -73,7 +73,9 @@ def main():
     
     This application is built using CNN transfer learning model (ResNet-50) and binary classification on a diverse Cats and Dogs dataset.
     Explore this by adding some image (cat/dog), and see how it works!
+    
     Created By: Shreya Chhabra
+    
     Github Repository : https://github.com/ShreyaChhabra-Innovates/Cat-Vs-Dog-Classification-CNN
   
     
@@ -86,14 +88,14 @@ def main():
         model = load_model()
         probability_cat, probability_dog = predict_image(image, model)
         
-        st.image(image.resize((200, 200)), caption='Successfully Uploaded Image', use_container_width=True)
+        st.image( caption='Successfully Uploaded Image', use_container_width=True, image.resize((100, 100)))
         
         if probability_dog > probability_cat:
             st.markdown(f"<h2 style='color: red;'> It is a Dog!</h2>", unsafe_allow_html=True)
-            st.markdown(f"<h2 style='color: red;'>Prediction Accuracy : {probability_dog:.2f}% </h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='color: green;'>Prediction Accuracy : {probability_dog:.2f}% </h2>", unsafe_allow_html=True)
         else:
             st.markdown(f"<h2 style='color: blue;'>It is a Cat!</h2>", unsafe_allow_html=True)
-            st.markdown(f"<h2 style='color: blue;'>Prediction Accuracy : {probability_cat:.2f}% </h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='color: green;'>Prediction Accuracy : {probability_cat:.2f}% </h2>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
